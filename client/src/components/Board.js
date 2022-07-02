@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 
 
-const URL = "";
+const URL = "http://localhost:5000";
 
 export default function Board() {
 
@@ -78,13 +78,13 @@ export default function Board() {
     }
 
     const deleteAll = async() =>{
-        try{
-            await axios.delete(`${URL}/api/todo`);
-            setTodoList([]);
-        }
-        catch(err){
-            console.log(err);
-        }
+        // try{
+        //     await axios.delete(`${URL}/api/todo`);
+        //     setTodoList([]);
+        // }
+        // catch(err){
+        //     console.log(err);
+        // }
     }
    
     const RenderEditTask = () =>{

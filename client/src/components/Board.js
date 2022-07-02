@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 
 
-const URL = "http://localhost:5000";
+const URL = "";
 
 export default function Board() {
 
@@ -45,7 +45,7 @@ export default function Board() {
         e.preventDefault();
         try{
             const inputText = document.getElementById("inputText");
-            if (inputText.value!==''){
+            if (inputText.value!=''){
                 const newTodoList = await axios.put(`${URL}/api/todo/${editing}`, {task:inputText.value,pending:0});
                 setTodoList(newTodoList.data);
             }
@@ -90,7 +90,7 @@ export default function Board() {
     const RenderEditTask = () =>{
         return (
             <form action="/todo" method="POST">
-                <input type="text" placeholder="Edit task" id="inputText" onChange={(e)=>{setPrevTask(e.target.value)}} value={prevTask}/>
+                <input type="text" placeholder="Edit task" id="inputText"/>
                 <button onClick={(e)=>putTodo(e)} className="addtask edittask">Save Task</button>
                 <span  className="deleteall" role="button" onClick={()=>{deleteAll()}}>!Delete All</span>
             </form>

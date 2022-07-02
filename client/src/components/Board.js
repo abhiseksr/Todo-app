@@ -4,7 +4,7 @@ import RenderEditTask from "./RenderEditTask";
 import {Link} from "react-router-dom";
 
 
-const URL = "http://localhost:5000";
+const URL = "";
 
 export default function Board() {
 

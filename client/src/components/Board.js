@@ -2,8 +2,17 @@ import React, {useState, useEffect} from 'react'
 import axios from "axios";
 import {Link} from "react-router-dom";
 
+const RenderEditTask = ({prevTask,setPrevTask,putTodo,deleteAll}) =>{
+    return (
+        <form action="/todo" method="POST">
+            <input type="text" placeholder="Edit task" id="inputText" value={prevTask} onChange={(e)=>{setPrevTask(e.target.value)}}/>
+            <button onClick={(e)=>putTodo(e)} className="addtask edittask">Save Task</button>
+            <span  className="deleteall" role="button" onClick={()=>{deleteAll()}}>!Delete All</span>
+        </form>
+    );
+}
 
-const URL = "";
+const URL = "http://localhost:5000";
 
 export default function Board() {
 
@@ -86,20 +95,10 @@ export default function Board() {
         //     console.log(err);
         // }
     }
-   
-    const RenderEditTask = () =>{
-        return (
-            <form action="/todo" method="POST">
-                <input type="text" placeholder="Edit task" id="inputText"/>
-                <button onClick={(e)=>putTodo(e)} className="addtask edittask">Save Task</button>
-                <span  className="deleteall" role="button" onClick={()=>{deleteAll()}}>!Delete All</span>
-            </form>
-        );
-    }
 
     return (
     <section className="board">
-        {editing!=='0'?<RenderEditTask/>:(
+        {editing!=='0'?<RenderEditTask prevTask={prevTask} setPrevTask={setPrevTask} deleteAll={deleteAll} putTodo={putTodo}/>:(
         <form action="/todo" method="POST">
             <input type="text" placeholder="Enter your task" id="inputText"/>
             <button onClick={(e)=>addTodo(e)} className="addtask">Add Task</button>

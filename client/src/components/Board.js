@@ -1,16 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
+import RenderEditTask from "./RenderEditTask";
 import {Link} from "react-router-dom";
 
-const RenderEditTask = ({prevTask,setPrevTask,putTodo,deleteAll}) =>{
-    return (
-        <form action="/todo" method="POST">
-            <input type="text" placeholder="Edit task" id="inputText" value={prevTask} onChange={(e)=>{setPrevTask(e.target.value)}}/>
-            <button onClick={(e)=>putTodo(e)} className="addtask edittask">Save Task</button>
-            <span  className="deleteall" role="button" onClick={()=>{deleteAll()}}>!Delete All</span>
-        </form>
-    );
-}
 
 const URL = "http://localhost:5000";
 

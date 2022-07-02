@@ -30,8 +30,10 @@ export default function Board() {
         e.preventDefault();
         try{
             const inputText = document.getElementById("inputText");
-            const newTodo = await axios.post(`${URL}/api/todo`, {task:inputText.value});
-            setTodoList((prevTodoList)=>[newTodo.data,...prevTodoList ]);
+            if (inputText.value){
+                const newTodo = await axios.post(`${URL}/api/todo`, {task:inputText.value});
+                setTodoList((prevTodoList)=>[newTodo.data,...prevTodoList ]);
+            }
             inputText.value = "";
         }
         catch(err){
@@ -43,8 +45,10 @@ export default function Board() {
         e.preventDefault();
         try{
             const inputText = document.getElementById("inputText");
-            const newTodoList = await axios.put(`${URL}/api/todo/${editing}`, {task:inputText.value,pending:0});
-            setTodoList(newTodoList.data);
+            if (inputText.value){
+                const newTodoList = await axios.put(`${URL}/api/todo/${editing}`, {task:inputText.value,pending:0});
+                setTodoList(newTodoList.data);
+            }
             inputText.value = "";
             setEditing('0');
         }
@@ -75,7 +79,7 @@ export default function Board() {
 
     const deleteAll = async() =>{
         try{
-            await axios.delete("${URL}/api/todo");
+            await axios.delete(`${URL}/api/todo`);
             setTodoList([]);
         }
         catch(err){

@@ -30,7 +30,7 @@ export default function Board() {
         e.preventDefault();
         try{
             const inputText = document.getElementById("inputText");
-            if (inputText.value){
+            if (inputText.value!==''){
                 const newTodo = await axios.post(`${URL}/api/todo`, {task:inputText.value});
                 setTodoList((prevTodoList)=>[newTodo.data,...prevTodoList ]);
             }
@@ -45,7 +45,7 @@ export default function Board() {
         e.preventDefault();
         try{
             const inputText = document.getElementById("inputText");
-            if (inputText.value){
+            if (inputText.value!==''){
                 const newTodoList = await axios.put(`${URL}/api/todo/${editing}`, {task:inputText.value,pending:0});
                 setTodoList(newTodoList.data);
             }

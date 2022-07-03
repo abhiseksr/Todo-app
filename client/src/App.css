@@ -38,9 +38,8 @@ html{
     justify-content: center;
     align-items: center;
     height: 14vh;
-    margin: 0px auto;
     position: relative;
-    top: 200vh;
+    top: 100vh;
     background-color: black;
     padding-top: 20px;
 }
@@ -87,13 +86,11 @@ html{
 
 .loading{
     width: 130px;
-    position: fixed;
     height: 130px;
-    top: 45vh;
+    margin: 15vh auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 44vw;
     background-color: rgba(31, 29, 29, 0.493);
     z-index: 2;
 }

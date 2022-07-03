@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Board from "./components/Board";
 import Instruction from "./components/Instruction";
+import LoadingIcon from "./components/LoadingIcon";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import "./App.css";
 
@@ -20,8 +21,8 @@ function App(){
     return (
         <div>
             <Routes>
-                <Route path="/todo" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><Board /><Footer /></div>}></Route>
-                <Route path="/todo/instruction" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><Instruction /><Footer /></div>}></Route>
+                <Route path="/todo" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><LoadingIcon /><Board /><Footer /></div>}></Route>
+                <Route path="/todo/instruction" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><LoadingIcon /><Instruction /><Footer /></div>}></Route>
             </Routes>
         </div>
     )

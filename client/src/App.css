@@ -26,6 +26,8 @@ html{
 }
 
 
+
+
 #icon{
     font-size: 25px;
 }
@@ -70,7 +72,6 @@ html{
 }
 
 .locations{
-    width: 100%;
     text-align: center;
     position: fixed;
     width: 100vw;
@@ -82,6 +83,34 @@ html{
     padding: 12vw;
     font-size: 25px;
     line-height: 3rem;
+}
+
+.loading{
+    width: 130px;
+    position: fixed;
+    height: 130px;
+    top: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 44vw;
+    background-color: rgba(31, 29, 29, 0.493);
+    z-index: 2;
+}
+
+.loadingIcon{
+    width: 70px;
+    height: 70px;
+    border: 9px solid black;
+    border-radius: 50%;
+    border-top: 9px solid dodgerblue;
+    animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .display{

@@ -39,7 +39,7 @@ html{
     align-items: center;
     height: 14vh;
     position: relative;
-    top: 100vh;
+    top: 10vh;
     background-color: black;
     padding-top: 20px;
 }
@@ -139,7 +139,6 @@ a{
 
 body{
     width: 100%;
-    min-height: 100vh;
     background-color: #4f5d75;
     position: relative;
 }

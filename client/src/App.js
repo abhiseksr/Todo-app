@@ -21,8 +21,8 @@ function App(){
     return (
         <div>
             <Routes>
-                <Route path="/todo" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><LoadingIcon /><Board /><Footer /></div>}></Route>
-                <Route path="/todo/instruction" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><LoadingIcon /><Instruction /><Footer /></div>}></Route>
+                <Route path="/todo" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><Board /><Footer /></div>}></Route>
+                <Route path="/todo/instruction" element={<div><Nav toggler = {toggle}/><Locations toggler = {toggle}/><Instruction /><Footer /></div>}></Route>
             </Routes>
         </div>
     )

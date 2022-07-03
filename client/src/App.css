@@ -37,9 +37,9 @@ html{
     max-width: 100%;
     justify-content: center;
     align-items: center;
-    height: 14vh;
+    height: 12vh;
     position: relative;
-    top: 10vh;
+    top: 100vh;
     background-color: black;
     padding-top: 20px;
 }
